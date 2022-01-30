@@ -1,0 +1,9 @@
+export PREFIX="$HOME/opt/cross"
+export PATH="$PREFIX/bin:$PATH"
+export UPAN_SRC="$HOME/workspace/src"
+export UPANIX_HOME="$UPAN_SRC/upanix"
+export UPANAPPS_HOME="$UPAN_SRC/upanapps"
+export UPANLIBS_HOME="$UPAN_SRC/upanlibs"
+export UPANTOOLS_HOME="$UPAN_SRC/upantools"
+export UPANIX_TOOLS="$HOME/workspace/tools"
+export DISPLAY=host.docker.internal:0

@@ -48,7 +48,7 @@ WORKDIR $HOME
 
 RUN echo "dev" >> $HOME/.sudopw
 RUN chmod 600 $HOME/.sudopw
-COPY .common_shrc $HOME/
+COPY common_shrc $HOME/.common_shrc
 RUN echo "source $HOME/.common_shrc" >> $HOME/.bashrc
 
 RUN mkdir -p $WORKSPACE
