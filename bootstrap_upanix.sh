@@ -19,6 +19,8 @@
 #	 You should have received a copy of the GNU General Public License
 #	 along with this program.  If not, see <http://www.gnu.org/licenses/
 
+set -e
+
 mkdir -p $UPAN_SRC
 
 if [ ! -d "$UPAN_SRC/upanlibs" ]
@@ -52,7 +54,10 @@ sgdisk -n 1:2048:200M -n 2:: $IMAGE_DIR/300MUSB_xhci.img
 
 echo $IMAGE_DIR
 echo $SUDO_PW | sudo -S -i -- << EOF
+set -e
+
 MOUNTP=`echo $SUDO_PW | sudo -S kpartx -av $IMAGE_DIR/300MUSB.img | head -1 | cut -d" " -f3`
+
 echo "Mount Device: \$MOUNTP"
 LOOP_DEV=\${MOUNTP::-2}
 echo "Loop Device: \$LOOP_DEV"
